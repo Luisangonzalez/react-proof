@@ -1,14 +1,18 @@
 import React from 'react';
 import { Route, Switch, Link } from 'react-router-dom'
 
-import Welcome from './welcome/welcome';
+import './App.css';
+
+import Home from './home/home';
 import Login from './login/login';
+import Register from './register/register';
 
 const Main = () => (
   <main>
     <Switch>
-      <Route exact path='/' component={Welcome}/>
+      <Route exact path='/' component={Home}/>
       <Route path='/login' component={Login}/>
+      <Route path='/register' component={Register}/>
     </Switch>
   </main>
 )
@@ -18,9 +22,10 @@ const Main = () => (
 const Header = () => (
   <header>
     <nav>
-      <ul>
-        <li><Link to='/'>Welcome</Link></li>
+      <ul className="navigation">
+        <li><Link to='/'>Home</Link></li>
         <li><Link to='/login'>Login</Link></li>
+        <li><Link to='/register'>Register</Link></li>
       </ul>
     </nav>
   </header>
